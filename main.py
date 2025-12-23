@@ -192,9 +192,9 @@ productivity_tips = [
 # ---------------------------------------------------------------------
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [
-        ["Tell me a joke"],
-        ["Motivate me"],
-        ["Give me a productivity tip"],
+        ["جوک بگو بهم"],
+        ["به من انگیزه بده"],
+        ["هر بار روی یک کار تمرکز کن"],
     ]
     reply_markup = ReplyKeyboardMarkup(
         keyboard=keyboard,
@@ -211,11 +211,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def handle_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     text = update.message.text
 
-    if text == "Tell me a joke":
+    if text == "جوک بگو بهم":
         response = random.choice(jokes)
-    elif text == "Motivate me":
+    elif text == "به من انگیزه بده":
         response = random.choice(motivations)
-    elif text == "Give me a productivity tip":
+    elif text == "هر بار روی یک کار تمرکز کن":
         response = random.choice(productivity_tips)
     else:
         response = "Please use the buttons to choose an option."
